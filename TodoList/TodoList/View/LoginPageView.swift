@@ -70,7 +70,7 @@ struct LoginPageView: View {
                         
                         
                         
-                        NavigationLink(destination: WebView(urlString: ""),isActive: $validateUser) {
+                        NavigationLink(destination: TabViewNew(),isActive: $validateUser) {
                             Text("Login")
                                 .foregroundColor(.white)
                                 .padding()
