@@ -10,6 +10,10 @@ struct LoginPageView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     
+    @State private var validateUser = false
+    @ObservedObject var usercredentialvm = UserCredentialsVM()
+    
+    
     var body: some View {
         NavigationStack{
             ZStack{
@@ -38,20 +42,52 @@ struct LoginPageView: View {
                             .padding(.bottom,10)
                         SecureField("Password", text: $password)
                             .textFieldStyle(PlainTextFieldStyle())
-                        //                        .padding()
-                        Button(action: {
-                            //Button Login Logic here
-                        }
-                               , label: {
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundStyle(Color.blue)
-                                Text("Login")
-                                    .foregroundStyle(Color.white)
-                            }
-                            .frame(height: 40)
-                            //                        .padding()
-                        }).padding(.top,30)
+                            .padding(.bottom,20)
+                        
+                        
+                        
+                        
+                        
+                        //
+                        //
+                        //                        Button(action: {
+                        //                            //Button Login Logic here
+                        //                        }
+                        //                               , label: {
+                        //                            ZStack{
+                        //                                RoundedRectangle(cornerRadius: 10)
+                        //                                    .foregroundStyle(Color.blue)
+                        //                                Text("Login")
+                        //                                    .foregroundStyle(Color.white)
+                        //                            }
+                        //                            .frame(height: 40)
+                        //                            //                        .padding()
+                        //                        }).padding(.top,30)
+                        //
+                        //
+                        //
+                        
+                        
+                        
+                        
+                        NavigationLink(destination: WebView(urlString: ""),isActive: $validateUser) {
+                            Text("Login")
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.blue)
+                                .cornerRadius(10)
+                                .onTapGesture {
+                                    validateUser = usercredentialvm.validateUserCredentials(username: username, password: password)
+                                    
+                                    
+                                    // matching data from core data using method created in usercredentialvm
+                                }}
+                        
+                        
+                        
+                        
+                        
                     }
                     .frame(maxWidth: 400)
                     .padding()
@@ -77,6 +113,7 @@ struct LoginPageView: View {
         }
     }
 }
+
 
 #Preview {
     
