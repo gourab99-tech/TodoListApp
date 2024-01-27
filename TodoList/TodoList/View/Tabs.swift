@@ -7,12 +7,30 @@
 
 import SwiftUI
 
-struct Tabs: View {
+struct tabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            profile()
+                .tabItem {
+                    Image(systemName: "house")
+                    
+                }
+            displayTasks()
+                .tabItem {
+                    Image(systemName: "list.bullet.rectangle")
+                    
+                }
+            NewsContentView(news: .init(title: "", description: "", imageUrl: "", url: ""))
+                .tabItem{
+                    Image(systemName: "newspaper")
+                }
+            
+            
+        }
     }
 }
 
 #Preview {
-    Tabs()
+    tabView()
 }
+
