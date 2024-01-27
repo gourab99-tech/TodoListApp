@@ -11,6 +11,9 @@ struct RegisterPageView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var fullname: String = ""
+    @State private var createNewUser = false
+    @ObservedObject var usercredentialvm = UserCredentialsVM()
+
     var body: some View {
         ZStack{
             //Bacground
@@ -42,20 +45,66 @@ struct RegisterPageView: View {
                         .padding(.bottom,10)
                     SecureField("Password", text: $password)
                         .textFieldStyle(PlainTextFieldStyle())
-                    //                        .padding()
-                    Button(action: {
-                        //Button Login Logic here
+                        .padding(.bottom)
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+//
+//                    Button(action: {
+//                        //Button Login Logic here
+//                    }
+//                           , label: {
+//                        ZStack{
+//                            RoundedRectangle(cornerRadius: 10)
+//                                .foregroundStyle(Color.blue)
+//                            Text("Register")
+//                                .foregroundStyle(Color.white)
+//                        }
+//                        .frame(height: 40)
+//                        //                        .padding()
+//                    }).padding(.top,30)
+//                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    NavigationLink(destination: LoginPageView(),isActive: $createNewUser) {
+                        Text("Sign Up")
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                            .onTapGesture {
+                                
+                                
+                                usercredentialvm.saveUserCredentials(username: username, password: password)
+                               
+                                
+                                createNewUser = true
+                                
+                            
+                                
+                                // we need to save data on this tap gesture calling the method created in usercredentialvm
+
+                            }
                     }
-                           , label: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundStyle(Color.blue)
-                            Text("Register")
-                                .foregroundStyle(Color.white)
-                        }
-                        .frame(height: 40)
-                        //                        .padding()
-                    }).padding(.top,30)
+                    
+                    
+                    
+                    
+                    
+                    
                 }
                 .frame(maxWidth: 400)
                 .padding()
