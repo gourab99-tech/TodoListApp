@@ -7,12 +7,24 @@
 
 import SwiftUI
 
-struct BackButton: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct backButton: View {
+   
+        @Environment(\.presentationMode) var presentationMode
+
+            var body: some View {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                    }
+                    .foregroundColor(.blue)
+                }
+            }
+    
 }
 
 #Preview {
-    BackButton()
+    backButton()
 }

@@ -7,12 +7,34 @@
 
 import SwiftUI
 
-struct EachRow: View {
+struct eachRow: View {
+    var isCompleted=false
+    var title:String
+      var desc:String
+    var date:Date
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Image(systemName: isCompleted ? "checkmark.circle" :"circle")
+                .foregroundColor(isCompleted ? .green:.red)
+            VStack{
+                Text(title)
+                    .font(.title2)
+                    .padding(.vertical,8)
+                HStack{
+                    Text(desc)
+                    Spacer()
+                    dueDate()
+                }
+            }
+            
+            Spacer()
+        }
+       
     }
 }
 
+
 #Preview {
-    EachRow()
+    eachRow(title: String(), desc: String(), date: Date())
 }
+

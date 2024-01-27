@@ -7,12 +7,23 @@
 
 import SwiftUI
 
-struct DueDate: View {
+struct dueDate: View {
+    @State var due:String?
+     var alt  = "No date selected"
+    @State private var showAlert = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            showAlert=true
+        }, label: {
+            Text("Due Date")
+                .foregroundStyle(Color.red)
+                .bold()
+        })
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Alert ").foregroundStyle(Color.red),
+                message: Text(" Due Date is :\(due ?? alt)")
+               )}
+        
     }
-}
-
-#Preview {
-    DueDate()
 }
