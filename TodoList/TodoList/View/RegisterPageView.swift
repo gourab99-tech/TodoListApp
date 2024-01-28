@@ -13,7 +13,7 @@ struct RegisterPageView: View {
     @State private var fullname: String = ""
     @State private var createNewUser = false
     @ObservedObject var usercredentialvm = UserCredentialsVM()
-
+    
     var body: some View {
         ZStack{
             //Bacground
@@ -31,7 +31,7 @@ struct RegisterPageView: View {
                         .font(.headline)
                 }
                 .foregroundStyle(Color.white)
-//                .padding(.top,40)
+                //                .padding(.top,40)
                 Spacer()
                 //Login Form
                 VStack{
@@ -56,21 +56,21 @@ struct RegisterPageView: View {
                     
                     
                     
-//
-//                    Button(action: {
-//                        //Button Login Logic here
-//                    }
-//                           , label: {
-//                        ZStack{
-//                            RoundedRectangle(cornerRadius: 10)
-//                                .foregroundStyle(Color.blue)
-//                            Text("Register")
-//                                .foregroundStyle(Color.white)
-//                        }
-//                        .frame(height: 40)
-//                        //                        .padding()
-//                    }).padding(.top,30)
-//                    
+                    //
+                    //                    Button(action: {
+                    //                        //Button Login Logic here
+                    //                    }
+                    //                           , label: {
+                    //                        ZStack{
+                    //                            RoundedRectangle(cornerRadius: 10)
+                    //                                .foregroundStyle(Color.blue)
+                    //                            Text("Register")
+                    //                                .foregroundStyle(Color.white)
+                    //                        }
+                    //                        .frame(height: 40)
+                    //                        //                        .padding()
+                    //                    }).padding(.top,30)
+                    //
                     
                     
                     
@@ -89,14 +89,14 @@ struct RegisterPageView: View {
                                 
                                 
                                 usercredentialvm.saveUserCredentials(username: username, password: password)
-                               
+                                
                                 
                                 createNewUser = true
                                 
-                            
+                                
                                 
                                 // we need to save data on this tap gesture calling the method created in usercredentialvm
-
+                                
                             }
                     }
                     
@@ -116,18 +116,18 @@ struct RegisterPageView: View {
                 ).padding()
                 Spacer()
                 //Register page Navigation link
-//                VStack{
-//                    HStack {
-//                        Text("New around here ?")
-//                            .foregroundStyle(Color.white)
-//                        NavigationLink("Register", destination: RegisterPageView())
-//                    }
-//                }
-//                .padding(.bottom,40)
+                //                VStack{
+                //                    HStack {
+                //                        Text("New around here ?")
+                //                            .foregroundStyle(Color.white)
+                //                        NavigationLink("Register", destination: RegisterPageView())
+                //                    }
+                //                }
+                //                .padding(.bottom,40)
             }
             
         }
-
+        
     }
 }
 
