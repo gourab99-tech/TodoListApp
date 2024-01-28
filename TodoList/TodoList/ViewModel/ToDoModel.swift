@@ -7,12 +7,20 @@
 
 import Foundation
 import CoreData
-
+class TaskEntity: NSManagedObject {
+    @NSManaged var name: String
+    @NSManaged var desc: String
+    @NSManaged var isCompleted: Bool
+    @NSManaged var date: Date
+    
+//    @NSManaged var userNotes: String
+    
+}
 class CoreDataViewModel:ObservableObject{
     let container:NSPersistentContainer
     @Published var saved:[TaskEntity]=[]
     init(){
-        container=NSPersistentContainer(name: "ToDoModel")
+        container=NSPersistentContainer(name:"TaskDataModel")
         container.loadPersistentStores { description, error in
             if let error=error{
                 print("ERROR LOADING CORE DATA.\(error)")

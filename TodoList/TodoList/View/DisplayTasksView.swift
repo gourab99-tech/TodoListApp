@@ -38,19 +38,19 @@ struct DisplayTasksView: View {
                                             }
                                         
                                         
-                                        Text(item.name ?? "No Name")
+                                        Text(item.name)
                                         
                                     }
                                     HStack{
                                         Text("Description:")
                                             .bold()
                                         
-                                        Text(item.desc ?? "No Description")
+                                        Text(item.desc)
                                         Spacer()
                                         if(!item.isCompleted){
-                                            if let dd=item.date {
-                                                DueDateView(due:vm.formatDate(date: dd, format: "EEEE, MMM d, yyyy"))
-                                            }
+                                           
+                                            DueDateView(due:vm.formatDate(date: item.date, format: "EEEE, MMM d, yyyy"))
+                                            
                                         }else{
                                             Text("Completed")
                                                 .foregroundStyle(Color.green)
@@ -87,19 +87,19 @@ struct DisplayTasksView: View {
                                             }
                                         
                                         
-                                        Text(item.name ?? "No Name")
+                                        Text(item.name )
                                         
                                     }
                                     HStack{
                                         Text("Description:")
                                             .bold()
                                         
-                                        Text(item.desc ?? "No Description")
+                                        Text(item.desc )
                                         Spacer()
                                         if(!item.isCompleted){
-                                            if let dd=item.date {
-                                                DueDateView(due:vm.formatDate(date: dd, format: "EEEE, MMM d, yyyy"))
-                                            }
+                                            
+                                            DueDateView(due:vm.formatDate(date: item.date, format: "EEEE, MMM d, yyyy"))
+                                            
                                         }else{
                                             Text("Completed")
                                                 .foregroundStyle(Color.green)
