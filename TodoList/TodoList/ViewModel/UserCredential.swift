@@ -12,7 +12,7 @@ import CoreData
 class UserCredentialsEntity: NSManagedObject {
     @NSManaged var username: String
     @NSManaged var password: String
-//    @NSManaged var userNotes: String
+    //    @NSManaged var userNotes: String
     
 }
 
@@ -24,7 +24,7 @@ class UserCredentialsVM: ObservableObject {
     
     init() {
         container = NSPersistentContainer(name: "User")
-
+        
         container.loadPersistentStores { description, error in
             if let error = error {
                 print("ERROR LOADING CORE DATA.\(error)")
@@ -34,7 +34,7 @@ class UserCredentialsVM: ObservableObject {
         }
         fetchUserCredentials()
     }
-
+    
     func fetchUserCredentials() {
         let request = NSFetchRequest<UserCredentialsEntity>(entityName: "UserCredentialsEntity")
         do {
@@ -44,12 +44,12 @@ class UserCredentialsVM: ObservableObject {
             print("Error in fetching user credentials: \(fetchError.localizedDescription)")
         }
     }
-
+    
     func saveUserCredentials(username: String, password: String) {
         let newUserCredentials = UserCredentialsEntity(context: container.viewContext)
         newUserCredentials.username = username
         newUserCredentials.password = password
-
+        
         do {
             try container.viewContext.save()
             print("saved to coredata")
@@ -58,14 +58,10 @@ class UserCredentialsVM: ObservableObject {
             print("Error in saving user credentials")
         }
     }
-
-    func validateUserCredentials(username: String, password: String) -> Bool {
-        
-        
-//      saveUserCredentials(username: "ballu", password: "don")
-        let matchingCredentials = savedUserCredentials.filter { $0.username == username && $0.password == password }
-
-                return !matchingCredentials.isEmpty
     
+    func validateUserCredentials(username: String, password: String) -> Bool {
+        let matchingCredentials = savedUserCredentials.filter { $0.username == username && $0.password == password }
+        return !matchingCredentials.isEmpty
+        
     }
 }
