@@ -78,7 +78,7 @@ struct LoginPageView: View {
                                 .background(Color.blue)
                                 .cornerRadius(10)
                                 .onTapGesture {
-                                    validateUser = usercredentialvm.validateUserCredentials(username: username, password: password)
+                                    validateUser = usercredentialvm.validateUserCredentials(username: username, password: password) && usercredentialvm.isValidEmail(username)
                                     
                                     
                                     // matching data from core data using method created in usercredentialvm

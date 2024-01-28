@@ -91,7 +91,7 @@ struct RegisterPageView: View {
                                 usercredentialvm.saveUserCredentials(username: username, password: password)
                                
                                 
-                                createNewUser = true
+                                createNewUser = usercredentialvm.isValidEmail(username)
                                 
                             
                                 
