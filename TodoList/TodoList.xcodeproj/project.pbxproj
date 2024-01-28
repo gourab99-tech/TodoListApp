@@ -93,7 +93,6 @@
 				6B79EEDB2B61903A0058A2B6 /* ViewModel */,
 				6B79EECF2B6132EE0058A2B6 /* Assets.xcassets */,
 				6B79EED12B6132EE0058A2B6 /* Preview Content */,
-				96BD86122B6519D400239EF0 /* TaskDataModel.xcdatamodeld */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -141,6 +140,7 @@
 			children = (
 				6B79EEDE2B61923F0058A2B6 /* NewsViewModel.swift */,
 				96BD86102B6519A200239EF0 /* ToDoModel.swift */,
+				96BD86122B6519D400239EF0 /* TaskDataModel.xcdatamodeld */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
