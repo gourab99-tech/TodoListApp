@@ -17,7 +17,8 @@ struct RegisterPageView: View {
     var body: some View {
         ZStack{
             //Bacground
-            Color.gray
+            Color.pink
+                .opacity(0.4)
                 .ignoresSafeArea()
             
             //Content
@@ -31,7 +32,7 @@ struct RegisterPageView: View {
                         .font(.headline)
                 }
                 .foregroundStyle(Color.white)
-                //                .padding(.top,40)
+                .padding(.top,40)
                 Spacer()
                 //Login Form
                 VStack{
@@ -47,64 +48,19 @@ struct RegisterPageView: View {
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding(.bottom)
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    //
-                    //                    Button(action: {
-                    //                        //Button Login Logic here
-                    //                    }
-                    //                           , label: {
-                    //                        ZStack{
-                    //                            RoundedRectangle(cornerRadius: 10)
-                    //                                .foregroundStyle(Color.blue)
-                    //                            Text("Register")
-                    //                                .foregroundStyle(Color.white)
-                    //                        }
-                    //                        .frame(height: 40)
-                    //                        //                        .padding()
-                    //                    }).padding(.top,30)
-                    //
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     NavigationLink(destination: LoginPageView(),isActive: $createNewUser) {
                         Text("Sign Up")
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color.blue)
+                            .background(Color.pink)
                             .cornerRadius(10)
                             .onTapGesture {
-                                
-                                
                                 usercredentialvm.saveUserCredentials(username: username, password: password)
                                 
-                                
                                 createNewUser = true
-                                
-                                
-                                
-                                // we need to save data on this tap gesture calling the method created in usercredentialvm
-                                
                             }
                     }
-                    
-                    
-                    
-                    
-                    
-                    
                 }
                 .frame(maxWidth: 400)
                 .padding()
@@ -115,15 +71,6 @@ struct RegisterPageView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 ).padding()
                 Spacer()
-                //Register page Navigation link
-                //                VStack{
-                //                    HStack {
-                //                        Text("New around here ?")
-                //                            .foregroundStyle(Color.white)
-                //                        NavigationLink("Register", destination: RegisterPageView())
-                //                    }
-                //                }
-                //                .padding(.bottom,40)
             }
             
         }

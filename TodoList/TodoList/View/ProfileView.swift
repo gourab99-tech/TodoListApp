@@ -9,7 +9,8 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.gray,.white], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [.pink, .white], startPoint: .topTrailing, endPoint: .bottomLeading)
+                .opacity(0.6)
                 .ignoresSafeArea()
             VStack {
                 Image("download")
