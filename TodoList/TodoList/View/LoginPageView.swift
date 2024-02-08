@@ -18,8 +18,9 @@ struct LoginPageView: View {
         NavigationStack{
             ZStack{
                 //Bacground
-                Color.gray
+                Color.pink
                     .ignoresSafeArea()
+                    .opacity(0.4)
                 
                 //Content
                 VStack {
@@ -32,62 +33,28 @@ struct LoginPageView: View {
                             .font(.headline)
                     }
                     .foregroundStyle(Color.white)
-                    .padding(.top,40)
+                    .padding(.top, 40)
                     Spacer()
                     //Login Form
                     VStack{
                         TextField("Username", text: $username)
                             .textFieldStyle(PlainTextFieldStyle())
                             .textInputAutocapitalization(.sentences)
-                            .padding(.bottom,10)
+                            .padding(.bottom,  10)
                         SecureField("Password", text: $password)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.bottom,20)
-                        
-                        
-                        
-                        
-                        
-                        //
-                        //
-                        //                        Button(action: {
-                        //                            //Button Login Logic here
-                        //                        }
-                        //                               , label: {
-                        //                            ZStack{
-                        //                                RoundedRectangle(cornerRadius: 10)
-                        //                                    .foregroundStyle(Color.blue)
-                        //                                Text("Login")
-                        //                                    .foregroundStyle(Color.white)
-                        //                            }
-                        //                            .frame(height: 40)
-                        //                            //                        .padding()
-                        //                        }).padding(.top,30)
-                        //
-                        //
-                        //
-                        
-                        
-                        
+                            .padding(.bottom, 20)
                         
                         NavigationLink(destination: TabViewNew(),isActive: $validateUser) {
                             Text("Login")
                                 .foregroundColor(.white)
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(Color.blue)
+                                .background(Color.pink)
                                 .cornerRadius(10)
                                 .onTapGesture {
                                     validateUser = usercredentialvm.validateUserCredentials(username: username, password: password)
-                                    
-                                    
-                                    // matching data from core data using method created in usercredentialvm
                                 }}
-                        
-                        
-                        
-                        
-                        
                     }
                     .frame(maxWidth: 400)
                     .padding()
@@ -101,9 +68,11 @@ struct LoginPageView: View {
                     //Register page Navigation link
                     VStack{
                         HStack {
-                            Text("New around here ?")
-                                .foregroundStyle(Color.white)
+                            Text("New around here?")
+                                .foregroundStyle(Color.black)
                             NavigationLink("Register", destination: RegisterPageView())
+                                .foregroundStyle(Color.pink)
+                                .fontWeight(.bold)
                         }
                     }
                     .padding(.bottom,40)

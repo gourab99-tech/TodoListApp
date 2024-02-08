@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
-<<<<<<< HEAD:TodoList/TodoList/TaskDataModel.xcdatamodeld/TaskDataModel.xcdatamodel/contents
-    <entity name="TaskEntity" representedClassName=".TaskEntity" syncable="YES" codeGenerationType="class">
-=======
     <entity name="TaskEntity" representedClassName=".TaskEntity" syncable="YES">
->>>>>>> 2b584602adb36adff7b737a0dd9eef89ab77be7b:TodoList/TodoList/ViewModel/TaskDataModel.xcdatamodeld/TaskDataModel.xcdatamodel/contents
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
